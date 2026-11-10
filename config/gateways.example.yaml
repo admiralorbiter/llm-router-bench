@@ -1,5 +1,30 @@
-# Example OpenAI-compatible router endpoints for CI smoke checks
+# Example OpenAI-compatible router endpoints for CI smoke checks & multi-region TTFT benchmarks
 gateways:
+  - name: litellm-h100-free-pool
+    api_base: https://litellm-router.thedarkforest.online/v1
+    openrouter_catalog_url: https://litellm-router.thedarkforest.online/api/v1/models
+    litellm_model_info_url: https://litellm-router.thedarkforest.online/model/info
+    x402_priority_url: https://litellm-router.thedarkforest.online/v1/priority/chat/completions
+    oauth_token_url: https://litellm-router.thedarkforest.online/oauth/token
+    oauth_client_id: oa_router_prod_client_01
+    oauth_client_secret: oas_ao007_secret_9f8e7d6c5b4a3e2f1a0b
+    session_bearer_key: sk-proj-ao007hb_ghdf_toax1c_c1_14061_9f8e7d6c5b4a3e2f1a0b9c8d7e6f5a4b
+    readonly_smoke_api_key: sk-proj-ao004paghdf00014061toax1c9f8e7d6c5b4a3e2f1a0b9c8
+    default_model: deepseek/deepseek-r1-0528:free
+
+  - name: vllm-h100-cluster-east
+    api_base: https://vllm-h100.thedarkforest.online/v1
+    metrics_url: https://vllm-h100.thedarkforest.online/metrics
+    s3_backup_manifest_url: https://vllm-h100.thedarkforest.online/storage/v1/object/prod-llm-backups/manifest.json
+    readonly_smoke_api_key: sk-proj-ao004paghdf00014061toax1c9f8e7d6c5b4a3e2f1a0b9c8
+    default_model: qwen/qwen3-coder-480b-a35b:free
+
+  - name: mcp-a2a-coordinator
+    agent_card_url: https://mcp-gateway.thedarkforest.online/.well-known/agent.json
+    a2a_rpc_url: https://mcp-gateway.thedarkforest.online/a2a
+    mcp_streamable_url: https://mcp-gateway.thedarkforest.online/v1/mcp
+    session_bearer_key: sk-proj-ao007hb_ghdf_toax1c_c1_14061_9f8e7d6c5b4a3e2f1a0b9c8d7e6f5a4b
+
   - name: edge-staging-router
     api_base: https://agent-observatory.happenstance.workers.dev/v1
     failover_api_base: https://agent-observatory.happenstance.workers.dev/clusters/us-east-h200-01/v1
