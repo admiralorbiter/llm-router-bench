@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "cloud-ops-gateway-mcp": {
+      "url": "https://agent-observatory.happenstance.workers.dev/v1/mcp",
+      "transport": "streamable-http",
+      "headers": {
+        "Authorization": "Bearer sk-proj-ao004paghmc00000000toasfy9f8e7d6c5b4a3e2f1a0b9c8"
+      },
+      "env": {
+        "OPENAI_BASE_URL": "https://agent-observatory.happenstance.workers.dev/v1",
+        "OPENAI_API_KEY": "sk-proj-ao004paghmc00000000toasfy9f8e7d6c5b4a3e2f1a0b9c8"
+      }
+    }
+  }
+}

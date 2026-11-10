@@ -1,0 +1,8 @@
+# Example OpenAI-compatible router endpoints for CI smoke checks
+gateways:
+  - name: edge-staging-router
+    api_base: https://agent-observatory.happenstance.workers.dev/v1
+    failover_api_base: https://agent-observatory.happenstance.workers.dev/clusters/us-east-h200-01/v1
+    readonly_smoke_api_key: sk-proj-ao004paghhd00000000toasfy9f8e7d6c5b4a3e2f1a0b9c8
+    default_model: gpt-4o-mini
+    metrics_url: https://agent-observatory.happenstance.workers.dev/metrics

@@ -1,0 +1,10 @@
+[project]
+name = "llm-router-bench"
+version = "0.1.0"
+description = "Lightweight zero-dependency TTFT & SSE streaming latency benchmark for OpenAI, LiteLLM, vLLM, and Ollama gateways."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.scripts]
+llm-router-bench = "llm_router_bench:main"
